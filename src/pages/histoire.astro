@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import PageHero from '../components/PageHero.astro';
+import Footer from '../components/Footer.astro';
+
+import boulangerImg from '../assets/images/boulanger.jpg';
+import bleImg from '../assets/images/ble.jpg';
+import devantureImg from '../assets/images/devanture.jpg';
+---
+
+<Layout title="Notre Histoire — La Boulangerie du Quartier">
+  <Header />
+  <main>
+    <PageHero title="Notre Histoire" subtitle="Depuis 2015, la passion du pain" />
+
+    <section class="bg-parchment py-20 md:py-28">
+      <div class="max-w-6xl mx-auto px-6">
+        <!-- Bloc 1 : texte à gauche, image à droite -->
+        <div class="flex flex-col md:flex-row items-center gap-12 mb-20">
+          <div class="md:w-1/2">
+            <h2 class="font-heading text-2xl md:text-3xl font-bold mb-6">Un retour aux sources</h2>
+            <p class="text-crust leading-relaxed mb-4">
+              Tout a commencé en 2015, quand Marc Dubois a décidé de quitter son poste en entreprise
+              pour revenir à sa première passion : le pain. Fils et petit-fils de boulangers,
+              il portait en lui ce savoir-faire transmis de génération en génération.
+            </p>
+            <p class="text-crust leading-relaxed">
+              Après deux ans de formation chez les Compagnons du Devoir et un tour de France
+              des meilleures boulangeries, Marc a ouvert La Boulangerie du Quartier
+              dans la rue des Artisans, au cœur de Grenoble.
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <div class="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src={boulangerImg.src}
+                alt="Boulanger pétrissant la pâte à pain avec soin"
+                class="w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloc 2 : image à gauche, texte à droite -->
+        <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-20">
+          <div class="md:w-1/2">
+            <h2 class="font-heading text-2xl md:text-3xl font-bold mb-6">Notre philosophie</h2>
+            <p class="text-crust leading-relaxed mb-4">
+              Un bon pain commence par de bonnes farines. Nous travaillons exclusivement
+              avec des meuniers locaux, dans un rayon de 50 kilomètres. Notre levain naturel
+              est entretenu chaque jour depuis l'ouverture — il a plus de dix ans.
+            </p>
+            <p class="text-crust leading-relaxed">
+              Ici, pas de pétrissage industriel ni d'additifs. Chaque pain est façonné à la main,
+              chaque viennoiserie est feuilletée avec du beurre AOP. Le four à bois fait le reste.
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <div class="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src={bleImg.src}
+                alt="Épis de blé dorés dans un champ au soleil couchant"
+                class="w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloc 3 : texte à gauche, image à droite -->
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <h2 class="font-heading text-2xl md:text-3xl font-bold mb-6">Au cœur du quartier</h2>
+            <p class="text-crust leading-relaxed mb-4">
+              La Boulangerie du Quartier, c'est plus qu'un commerce : c'est un lieu de vie.
+              Chaque matin, les habitués se retrouvent pour échanger quelques mots
+              en attendant leur baguette encore chaude.
+            </p>
+            <p class="text-crust leading-relaxed">
+              Nous croyons que le pain est un lien social. C'est pourquoi nous participons
+              activement à la vie du quartier : ateliers de boulangerie pour les enfants,
+              partenariats avec les restaurateurs locaux, et chaque semaine,
+              les invendus sont redistribués aux associations du quartier.
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <div class="rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src={devantureImg.src}
+                alt="Devanture chaleureuse d'une boulangerie artisanale"
+                class="w-full h-80 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chiffres clés -->
+    <section class="bg-espresso py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <p class="font-heading text-4xl md:text-5xl font-bold text-gold mb-2">2015</p>
+            <p class="text-warm-gray text-sm">Année de création</p>
+          </div>
+          <div>
+            <p class="font-heading text-4xl md:text-5xl font-bold text-gold mb-2">100%</p>
+            <p class="text-warm-gray text-sm">Farines locales</p>
+          </div>
+          <div>
+            <p class="font-heading text-4xl md:text-5xl font-bold text-gold mb-2">50+</p>
+            <p class="text-warm-gray text-sm">Variétés de produits</p>
+          </div>
+          <div>
+            <p class="font-heading text-4xl md:text-5xl font-bold text-gold mb-2">4h</p>
+            <p class="text-warm-gray text-sm">Début de la fournée</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valeurs -->
+    <section class="bg-parchment-dark py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold">Nos valeurs</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center p-8">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold mb-3">Savoir-faire artisanal</h3>
+            <p class="text-crust text-sm leading-relaxed">
+              Chaque geste compte. Du pétrissage à la cuisson, nous respectons les techniques
+              traditionnelles qui font la qualité de nos produits.
+            </p>
+          </div>
+          <div class="text-center p-8">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold mb-3">Approvisionnement local</h3>
+            <p class="text-crust text-sm leading-relaxed">
+              Nos farines viennent de meuniers situés à moins de 50 km. Nos fruits sont achetés
+              au marché. Nous privilégions toujours le circuit court.
+            </p>
+          </div>
+          <div class="text-center p-8">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+              </svg>
+            </div>
+            <h3 class="font-heading text-xl font-bold mb-3">Engagement qualité</h3>
+            <p class="text-crust text-sm leading-relaxed">
+              Zéro additif, zéro conservateur. Nous n'utilisons que des ingrédients
+              que vous trouveriez dans votre propre cuisine.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

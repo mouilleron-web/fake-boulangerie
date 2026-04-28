@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import PageHero from '../components/PageHero.astro';
+import Footer from '../components/Footer.astro';
+
+import painLevainImg from '../assets/images/pain-levain.jpg';
+import croissantsImg from '../assets/images/croissants.jpg';
+import patisseriesImg from '../assets/images/patisseries.jpg';
+import sandwichesImg from '../assets/images/sandwiches.jpg';
+
+const categories = [
+  {
+    title: "Nos Pains",
+    products: [
+      { name: "Pain au levain", price: "5,20 €", description: "Fermentation longue 24h, farine de tradition, croûte épaisse." },
+      { name: "Baguette tradition", price: "1,30 €", description: "Farine Label Rouge, pétrissage lent, cuisson sur sole." },
+      { name: "Pain de campagne", price: "4,80 €", description: "Mélange de farines de blé et de seigle, mie dense et parfumée." },
+      { name: "Pain aux céréales", price: "5,50 €", description: "Graines de lin, tournesol, sésame et pavot sur une base au levain." },
+      { name: "Pain aux noix", price: "6,00 €", description: "Noix de Grenoble AOP intégrées à notre pâte au levain naturel." },
+      { name: "Fougasse", price: "3,80 €", description: "Huile d'olive, herbes de Provence. Idéale pour l'apéritif." },
+    ],
+    image: painLevainImg.src,
+    alt: "Assortiment de pains artisanaux sur une étagère en bois",
+  },
+  {
+    title: "Viennoiseries",
+    products: [
+      { name: "Croissant pur beurre", price: "1,40 €", description: "Beurre AOP Charentes-Poitou, feuilletage traditionnel." },
+      { name: "Pain au chocolat", price: "1,50 €", description: "Deux barres de chocolat noir 64%, même feuilletage que le croissant." },
+      { name: "Chausson aux pommes", price: "2,20 €", description: "Compote maison de pommes Golden, pâte feuilletée dorée." },
+      { name: "Brioche tressée", price: "4,50 €", description: "Moelleuse et parfumée à la fleur d'oranger, idéale au petit-déjeuner." },
+      { name: "Pain aux raisins", price: "1,80 €", description: "Crème pâtissière maison, raisins secs macérés au rhum." },
+      { name: "Escargot chocolat-noisette", price: "2,00 €", description: "Praliné noisette et pépites de chocolat sur pâte feuilletée." },
+    ],
+    image: croissantsImg.src,
+    alt: "Croissants et viennoiseries dorées disposées sur un plateau",
+  },
+  {
+    title: "Pâtisseries",
+    products: [
+      { name: "Tarte au citron meringuée", price: "4,50 €", description: "Pâte sablée, crème citron acidulée, meringue italienne torchée." },
+      { name: "Éclair au chocolat", price: "4,00 €", description: "Pâte à choux, crème pâtissière au chocolat Valrhona 70%." },
+      { name: "Paris-Brest", price: "5,50 €", description: "Praliné noisette maison, pâte à choux croustillante." },
+      { name: "Flan pâtissier", price: "3,50 €", description: "Recette traditionnelle, vanille de Madagascar, sans pâte." },
+      { name: "Tarte fruits de saison", price: "4,80 €", description: "Fruits frais du marché, crème d'amande, pâte sablée." },
+      { name: "Millefeuille", price: "5,00 €", description: "Trois couches de feuilletage caramélisé, crème diplomate vanillée." },
+    ],
+    image: patisseriesImg.src,
+    alt: "Vitrine de pâtisseries avec éclairs et tartes aux fruits",
+  },
+  {
+    title: "Sandwiches & Traiteur",
+    products: [
+      { name: "Jambon-beurre", price: "4,50 €", description: "Jambon blanc supérieur, beurre demi-sel, baguette tradition." },
+      { name: "Poulet crudités", price: "5,50 €", description: "Filet de poulet rôti, crudités de saison, sauce maison." },
+      { name: "Veggie", price: "5,00 €", description: "Légumes grillés, houmous, roquette, pain aux céréales." },
+      { name: "Quiche du jour", price: "4,00 €", description: "Recette qui change chaque jour. Pâte brisée maison." },
+      { name: "Salade composée", price: "6,50 €", description: "Produits frais du marché, vinaigrette à l'huile de noix." },
+      { name: "Formule midi", price: "9,50 €", description: "Sandwich ou quiche + boisson + dessert du jour." },
+    ],
+    image: sandwichesImg.src,
+    alt: "Sandwiches frais préparés sur du pain artisanal",
+  },
+];
+---
+
+<Layout title="Nos Produits — La Boulangerie du Quartier">
+  <Header />
+  <main>
+    <PageHero title="Nos Produits" subtitle="Faits maison, chaque jour, sans compromis" />
+
+    {categories.map((category, i) => (
+      <section class={i % 2 === 0 ? "bg-parchment py-16 md:py-20" : "bg-parchment-dark py-16 md:py-20"}>
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="flex flex-col md:flex-row gap-10 items-start">
+            <div class="md:w-1/3 shrink-0">
+              <div class="sticky top-24">
+                <h2 class="font-heading text-2xl md:text-3xl font-bold mb-4">{category.title}</h2>
+                <div class="rounded-2xl overflow-hidden shadow-md">
+                  <img
+                    src={category.image}
+                    alt={category.alt}
+                    class="w-full h-48 object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {category.products.map((product) => (
+                <div class="bg-flour rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <div class="flex items-start justify-between gap-3 mb-2">
+                    <h3 class="font-heading font-bold text-lg">{product.name}</h3>
+                    <span class="text-gold font-bold text-lg shrink-0">{product.price}</span>
+                  </div>
+                  <p class="text-crust text-sm leading-relaxed">{product.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <section class="bg-espresso py-12">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="text-warm-gray text-sm">
+          Tous nos produits sont fabriqués sur place, chaque jour, sans conservateurs ni additifs.
+          La composition peut varier selon les saisons et les arrivages.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

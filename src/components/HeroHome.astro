@@ -1,0 +1,43 @@
+---
+import heroImg from '../assets/images/hero-pains.jpg';
+---
+
+<section class="relative min-h-screen flex items-center">
+  <div class="absolute inset-0">
+    <img
+      src={heroImg.src}
+      alt="Pains artisanaux dorés sur une planche en bois rustique"
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-espresso/90 via-espresso/60 to-espresso/30"></div>
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 py-32">
+    <div class="max-w-2xl">
+      <p class="text-gold font-semibold mb-4 text-sm tracking-[0.2em] uppercase">
+        Boulangerie artisanale — Grenoble
+      </p>
+      <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-flour">
+        Pains artisanaux, faits avec <span class="text-gold italic">passion</span> depuis 2015
+      </h1>
+      <p class="text-xl text-flour/80 leading-relaxed mb-10 max-w-xl font-light">
+        Chaque matin, nous perpétuons la tradition du pain fait maison.
+        Farines locales, levain naturel, cuisson au four à bois.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href="/produits"
+          class="inline-flex items-center justify-center px-8 py-4 bg-gold text-espresso font-bold rounded-xl hover:bg-gold-dark transition-colors duration-200 shadow-lg shadow-gold/20"
+        >
+          Découvrir nos produits
+        </a>
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center px-8 py-4 border-2 border-flour/30 text-flour font-semibold rounded-xl hover:border-gold hover:text-gold transition-colors duration-200"
+        >
+          Nous rendre visite
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
